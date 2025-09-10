@@ -204,7 +204,6 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
     padding: 0 1rem;
     position: relative;
     overflow: hidden;
@@ -245,9 +244,50 @@ nav {
 }
 
 .hero-content {
-    max-width: 900px;
+    max-width: 1200px;
     z-index: 1;
     animation: fadeInUp 1s ease-out;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    width: 100%;
+}
+
+.hero-text {
+    flex: 1;
+    text-align: left;
+}
+
+.hero-image {
+    flex: 0 0 400px;
+}
+
+.main-portrait {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.main-portrait:hover {
+    transform: scale(1.05);
+}
+
+.decorative-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 2rem auto;
+    display: block;
+}
+
+.decorative-image:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 }
 
 @keyframes fadeInUp {
@@ -1173,6 +1213,21 @@ footer a:hover {
         padding: 2rem 1rem;
     }
     
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+    
+    .hero-text {
+        text-align: center;
+    }
+    
+    .hero-image {
+        flex: none;
+        max-width: 300px;
+    }
+    
     .hero h1 {
         font-size: 2.5rem;
     }
@@ -1233,6 +1288,14 @@ footer a:hover {
 }
 
 @media screen and (max-width: 480px) {
+    .hero-image {
+        max-width: 250px;
+    }
+    
+    .decorative-image {
+        max-width: 250px;
+    }
+    
     .hero h1 {
         font-size: 2rem;
     }
